@@ -1,13 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://dano3onxj0kf4"]
+[gd_scene load_steps=14 format=3 uid="uid://dano3onxj0kf4"]
 
 [ext_resource type="Script" uid="uid://b2dkws5xsuuo0" path="res://scripts/travelPackageCard.gd" id="1_64omg"]
 [ext_resource type="Texture2D" uid="uid://chv5pgyxk51qq" path="res://assets/graphics/package_ship.png" id="2_64omg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64omg"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kmq2r"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pjswj"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0204"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s1uh6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnqke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7kgne"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5867"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d58t4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qymyg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eqso3"]
 
 [node name="LuxuryCruise" type="Control"]
 custom_minimum_size = Vector2(135, 200)
@@ -29,8 +45,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_64omg")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_kmq2r")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_pjswj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_w0204")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_s1uh6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_hnqke")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7kgne")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_a5867")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_d58t4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qymyg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_eqso3")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
 layout_mode = 1

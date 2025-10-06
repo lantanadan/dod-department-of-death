@@ -1,13 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtpas7sjwi6jh"]
+[gd_scene load_steps=14 format=3 uid="uid://dtpas7sjwi6jh"]
 
 [ext_resource type="Script" uid="uid://b2dkws5xsuuo0" path="res://scripts/travelPackageCard.gd" id="1_avhsa"]
 [ext_resource type="Texture2D" uid="uid://2ph66562bb5b" path="res://assets/graphics/package_numberNine.png" id="2_ddfcb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cnbg5"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oaixj"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dhrj3"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cg0q"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dncyy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8bjcu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ydu0w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqis3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7v4tf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ycxku"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmm4o"]
 
 [node name="NumberNine" type="Control"]
 custom_minimum_size = Vector2(135, 200)
@@ -29,8 +45,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cnbg5")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_oaixj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_dhrj3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_1cg0q")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_dncyy")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8bjcu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ydu0w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_wqis3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_7v4tf")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ycxku")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dmm4o")
 
 [node name="TextureRect" type="TextureRect" parent="Button"]
 layout_mode = 1
