@@ -1,0 +1,259 @@
+[gd_scene load_steps=12 format=3 uid="uid://cl3t1b2nw6ly6"]
+
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="1_2yg7h"]
+[ext_resource type="FontFile" uid="uid://clvce0yemoy7d" path="res://assets/fonts/OpenSans-Regular.ttf" id="2_nh7p6"]
+[ext_resource type="Script" uid="uid://b4ohrvvy6iahw" path="res://scripts/dossier.gd" id="2_skoqc"]
+[ext_resource type="FontFile" uid="uid://bos8s20viymba" path="res://assets/fonts/OpenSans-Medium.ttf" id="3_nh7p6"]
+[ext_resource type="PackedScene" uid="uid://dtpas7sjwi6jh" path="res://scenes/travel_number_nine.tscn" id="4_k8488"]
+[ext_resource type="PackedScene" uid="uid://dano3onxj0kf4" path="res://scenes/travel_cruise.tscn" id="5_skoqc"]
+[ext_resource type="PackedScene" uid="uid://biwyb3tk7hgjl" path="res://scenes/travel_car.tscn" id="6_2slbg"]
+[ext_resource type="PackedScene" uid="uid://cr5u4bwpvoclv" path="res://scenes/travel_coffin.tscn" id="7_344ou"]
+[ext_resource type="AudioStream" uid="uid://bg4o1pqe50hr0" path="res://assets/sounds/focus.ogg" id="9_344ou"]
+[ext_resource type="AudioStream" uid="uid://dmmt5fqji3qj5" path="res://assets/sounds/select.ogg" id="10_snpko"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_skoqc"]
+color = Color(1, 0.53333336, 0, 1)
+thickness = 2
+
+[node name="Dossier" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_2yg7h")
+script = ExtResource("2_skoqc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 790.0
+offset_bottom = 558.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="NameBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/NameBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Name: "
+
+[node name="NameData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/NameBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Name]"
+
+[node name="OccuptationBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Occupation" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/OccuptationBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Occupation: "
+
+[node name="OccupationData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/OccuptationBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Occ]"
+
+[node name="NetWorthBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NW" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/NetWorthBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Lifetime Net Worth: "
+
+[node name="NWData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/NetWorthBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[NW]"
+
+[node name="BuriedBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="BuriedNetWorth" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/BuriedBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Buried With: "
+
+[node name="BuriedNetWorthData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/BuriedBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[BWN]"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+color = Color(1, 0.53333336, 0, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimeOfDeathBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="TOD" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/TimeOfDeathBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Time of Death: "
+
+[node name="TODData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/TimeOfDeathBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Time]"
+
+[node name="CauseOfDeathBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="COD" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/CauseOfDeathBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Cause of Death: "
+
+[node name="CODData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/CauseOfDeathBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Cause]"
+
+[node name="VirtuesBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Virtues" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/VirtuesBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Virtues: "
+
+[node name="VirtuesData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/VirtuesBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Virtues ]"
+
+[node name="SinsBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Sins" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/SinsBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Sins: "
+
+[node name="SinsData" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/SinsBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Sins]"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+color = Color(1, 0.53333336, 0, 1)
+
+[node name="Travel Packages" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Recommended" type="HBoxContainer" parent="VBoxContainer/Travel Packages"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Package" type="Label" parent="VBoxContainer/Travel Packages/Recommended"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Recommended Travel Package: "
+
+[node name="PackageData" type="Label" parent="VBoxContainer/Travel Packages/Recommended"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("3_nh7p6")
+text = "[Recommended]"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Travel Packages"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_skoqc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Travel Packages"]
+custom_minimum_size = Vector2(540, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="NumberNine" parent="VBoxContainer/Travel Packages/HBoxContainer" instance=ExtResource("4_k8488")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Coffin")
+focus_neighbor_right = NodePath("../LuxuryCruise")
+focus_mode = 2
+packageName = "The Number Nine - $"
+packageDescription = "Our top of the line express train shoots straight to the Ninth Underworld instead of four minutes instead of four years. Qualified candidates ride free!"
+
+[node name="LuxuryCruise" parent="VBoxContainer/Travel Packages/HBoxContainer" instance=ExtResource("5_skoqc")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../NumberNine")
+focus_neighbor_right = NodePath("../Car")
+focus_mode = 2
+packageName = "Luxury Cruise - $"
+packageDescription = "This luxurious cruise lets you take in the beauty of the Eighth Underworld from a safe distance. The DOD is not responsible for any personal items lost in the ocean."
+cardNumber = 1
+
+[node name="Car" parent="VBoxContainer/Travel Packages/HBoxContainer" instance=ExtResource("6_2slbg")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../LuxuryCruise")
+focus_neighbor_right = NodePath("../Coffin")
+focus_mode = 2
+packageName = "Sports Car - $"
+packageDescription = "Our demon mechanics have personally tuned these retro styled sports cars to be the most thrilling experience imaginable! Comes in your choice of color and decals. Other options available. See agent for details."
+cardNumber = 2
+
+[node name="Coffin" parent="VBoxContainer/Travel Packages/HBoxContainer" instance=ExtResource("7_344ou")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../Car")
+focus_neighbor_right = NodePath("../NumberNine")
+focus_mode = 2
+packageName = "Coffin Shipment - $"
+packageDescription = "The most affordable way to reach the Ninth Underworld, you will be safely packed in a [highly flammable] foam to stay comfortable during the journey. Note that more agile clients may substitute this for an Excelsior brand walking stick."
+cardNumber = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Travel Packages"]
+layout_mode = 2
+
+[node name="PackageName" type="Label" parent="VBoxContainer/Travel Packages/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "[Package Name]"
+
+[node name="PackageDescription" type="Label" parent="VBoxContainer/Travel Packages/VBoxContainer"]
+custom_minimum_size = Vector2(640, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_nh7p6")
+theme_override_font_sizes/font_size = 18
+text = "[Package Description]"
+autowrap_mode = 2
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Focus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_344ou")
+bus = &"SFX"
+
+[node name="Select" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_snpko")
+bus = &"SFX"

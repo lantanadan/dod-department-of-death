@@ -1,0 +1,170 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdw04ctgo4q7p"]
+
+[ext_resource type="Script" uid="uid://db0bxv7cg25ch" path="res://scripts/game.gd" id="1_lbhrr"]
+[ext_resource type="FontFile" uid="uid://clvce0yemoy7d" path="res://assets/fonts/OpenSans-Regular.ttf" id="2_lbhrr"]
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="2_lnu2h"]
+[ext_resource type="AudioStream" uid="uid://bg4o1pqe50hr0" path="res://assets/sounds/focus.ogg" id="4_iywne"]
+[ext_resource type="AudioStream" uid="uid://dmmt5fqji3qj5" path="res://assets/sounds/select.ogg" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dqqmjchhq4fm5" path="res://scenes/client_button.tscn" id="4_p57ef"]
+[ext_resource type="AudioStream" uid="uid://dwoi1r8ifx045" path="res://assets/sounds/counter.ogg" id="7_u5sy4"]
+[ext_resource type="FontFile" uid="uid://bd1gtegeg4iff" path="res://assets/fonts/OpenSans-ExtraBold.ttf" id="8_gee14"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iywne"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_u5sy4"]
+color = Color(1, 0.53333336, 0, 1)
+thickness = 2
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lbhrr")
+clientButton = ExtResource("4_p57ef")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AgentLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 18
+text = "Agent: "
+
+[node name="AgentName" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_font_sizes/font_size = 18
+text = "[Load Name Here]"
+
+[node name="HSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_iywne")
+
+[node name="FundsLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 18
+text = "Funds: "
+
+[node name="TotalFunds" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_font_sizes/font_size = 18
+text = "[Load Funds Here]"
+
+[node name="HSeparator2" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+theme_override_styles/separator = SubResource("StyleBoxEmpty_iywne")
+
+[node name="RatingLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_font_sizes/font_size = 18
+text = "Rating: "
+
+[node name="TotalRating" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_lnu2h")
+theme_override_fonts/font = ExtResource("2_lbhrr")
+theme_override_font_sizes/font_size = 18
+text = "[Rating Here]"
+
+[node name="Content" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+theme = ExtResource("2_lnu2h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Clients" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Content/VBoxContainer/Clients"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxLine_u5sy4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Content/VBoxContainer/Clients"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="VBoxContainer/Content/VBoxContainer/Clients/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Active Clients"
+horizontal_alignment = 1
+
+[node name="Date" type="Label" parent="VBoxContainer/Content/VBoxContainer/Clients/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "October 25, 1998"
+horizontal_alignment = 1
+
+[node name="TodaysClients" type="HBoxContainer" parent="VBoxContainer/Content/VBoxContainer/Clients"]
+layout_mode = 2
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Focus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_iywne")
+bus = &"SFX"
+
+[node name="Select" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_lbhrr")
+bus = &"SFX"
+
+[node name="Counter" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_u5sy4")
+bus = &"SFX"
+
+[node name="Help" type="Button" parent="."]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_lnu2h")
+theme_override_fonts/font = ExtResource("8_gee14")
+theme_override_font_sizes/font_size = 48
+text = "?"
+
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]

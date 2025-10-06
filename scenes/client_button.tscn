@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqqmjchhq4fm5"]
+
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="1_hf5uf"]
+[ext_resource type="FontFile" uid="uid://bos8s20viymba" path="res://assets/fonts/OpenSans-Medium.ttf" id="2_0202k"]
+[ext_resource type="Script" uid="uid://d2u48ihup0w06" path="res://scripts/client_button.gd" id="3_4khlp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lnu2h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0202k"]
+
+[node name="ClientButton" type="Button"]
+custom_minimum_size = Vector2(260, 0)
+size_flags_horizontal = 0
+theme = ExtResource("1_hf5uf")
+theme_override_colors/font_color = Color(1, 0.53333336, 0, 1)
+theme_override_fonts/font = ExtResource("2_0202k")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lnu2h")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0202k")
+text = "Colomar, Mercedes"
+script = ExtResource("3_4khlp")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

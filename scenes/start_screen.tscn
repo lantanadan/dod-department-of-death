@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7kndyvbvrunr"]
+
+[ext_resource type="Script" uid="uid://cv8nheqwhchmu" path="res://scripts/start_screen.gd" id="1_o7i0r"]
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="1_tx5wa"]
+[ext_resource type="AudioStream" uid="uid://cd5flacfpnwhl" path="res://assets/sounds/typing.ogg" id="3_he1sj"]
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o7i0r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_tx5wa")
+bbcode_enabled = true
+text = "Oh hi there, %s! You must be new here. Well, let me be the first to break the bad news to you. You're dead. But, as they say upstairs, death is an opportunity... a JOB opportunity!
+
+So welcome to your first day at the [i]Department of Death[/i]. Your job is to review dossiers and interview the recently deceased as they come in. But you're not here to pass judgment. You're their travel agent! Everyone goes to the same place, but when and how they get there is up to how they lived... and how much cash they were buried with.
+
+Remember, you're working on commission (5%). Get your clients the best package they both deserve and can afford. If you're feeling extra nice, you can cover the difference on more expensive packages, but that's coming out of your pay.
+
+Just try not to cheap out our customers, yeah? We've got a reputation to uphold, and we wouldn't you pushin' up daisies... again. So get hustlin'!
+     [i]- Dominic [/i]				(Press any key to continue)"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="TypingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_he1sj")
+volume_db = -6.0
+autoplay = true

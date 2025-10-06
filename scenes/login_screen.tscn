@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw5apk3d2uqn5"]
+
+[ext_resource type="Script" uid="uid://dgm6p53h8fb15" path="res://scripts/login_screen.gd" id="1_e8ckn"]
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="1_frse4"]
+
+[node name="LoginScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8ckn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(540, 540)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -270.0
+offset_top = -270.0
+offset_right = 270.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_frse4")
+text = "PLEASE ENTER NAME"
+
+[node name="User" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+theme = ExtResource("1_frse4")
+max_length = 16
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_frse4")
+text = "CONTINUE"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

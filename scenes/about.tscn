@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://768dttjt7wip"]
+
+[ext_resource type="Theme" uid="uid://cfeg1d38wpwnk" path="res://assets/data/ui.tres" id="1_23fuk"]
+[ext_resource type="Script" uid="uid://dqmo1bahhxacl" path="res://scripts/about.gd" id="2_cm4eg"]
+[ext_resource type="FontFile" uid="uid://clvce0yemoy7d" path="res://assets/fonts/OpenSans-Regular.ttf" id="2_lloox"]
+[ext_resource type="FontFile" uid="uid://b2jlxwom5r8bd" path="res://assets/fonts/OpenSans-Italic.ttf" id="3_23fuk"]
+[ext_resource type="FontFile" uid="uid://bd1gtegeg4iff" path="res://assets/fonts/OpenSans-ExtraBold.ttf" id="4_lloox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lloox"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cm4eg"]
+
+[node name="About" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_23fuk")
+script = ExtResource("2_cm4eg")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.0
+offset_top = -200.0
+offset_right = 364.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_scroll_mode = 0
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/ScrollContainer"]
+custom_minimum_size = Vector2(700, 300)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_lloox")
+theme_override_fonts/italics_font = ExtResource("3_23fuk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lloox")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cm4eg")
+bbcode_enabled = true
+text = "[center][b]Need Some Help?[/b][/center]
+
+[b]Funds:[/b] These are your currently available funds. You make a 5% commission on each sale. You may have to help cover costs sometimes, but don't go bankrupt or it's lights out.
+[b]Rating:[/b] How your clients feel about how they've been treated. The more a package matches a client, the higher your rating will go. Check for clues in a client's bio to determine which package is [i]actually[/i] best for them. The DOD's suggestion isn't necessarily always accurate. Keep a good rating or it's lights out.
+
+Try to survive for one week!
+
+[center][b]Credits[/b][/center]
+[i]DOD: Department of Death[/i] developed by Lantana Games for Jamsepticeye 2025.
+
+[b]Game Design, Coding, Graphics, Sound, and Narrative[/b] - Danny Silvers
+
+VHS and CRT monitor effect for Godot 4 by A7meD and pend00. [b]https://godotshaders.com/shader/vhs-and-crt-monitor-effect-2/[/b]
+Some assets provided by OpenGameArt ([b]https://opengameart.org[/b]) and Pixabay ([b]https://pixabay.com[/b])
+
+Any similarity to any persons, living or dead, is entirely coincidental and unintentional.
+
+Made with Godot 4.5 Stable. [b]https://godotengine.org/license/[/b]
+
+[b]https://lantanagames.com[/b]"
+fit_content = true
+
+[node name="Help" type="Button" parent="."]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -77.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_23fuk")
+theme_override_fonts/font = ExtResource("4_lloox")
+theme_override_font_sizes/font_size = 48
+text = "X"
+
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
