@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Department of Death"
 config/description="A tribute to Lucasarts/Double Fine's \"Grim Fandango.\""
-config/version="1.0"
+config/version="1.1"
 run/main_scene="uid://c0u4mvssgcxd1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 boot_splash/bg_color=Color(0.07450981, 0.05882353, 0.02745098, 1)
@@ -28,8 +28,8 @@ GlobalStates="*res://scripts/global_states.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
+window/handheld/orientation=6
 
 [rendering]
 
